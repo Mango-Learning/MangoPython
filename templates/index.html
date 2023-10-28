@@ -3,6 +3,7 @@
 <head>
     <title>Mango Python IDE</title>
 	<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 
@@ -107,11 +108,19 @@ pre {
 
 <body>
 
+<header class="w3-container w3-padding-16 w3-light-grey">
+<table><tr>
+<td><a href="http://www.mangolearning.academy"><img src="{{url_for('static', filename='logo.png')}}" width="100"></a></td>
+<td><H3>&nbsp &nbsp Mango Python IDE</H3></td>
+</table>
+</tr></div>
+</header>
+
 <div class="row">
     
 <!--	<h1>Mango Python IDE</h1> -->
 	<div class="column_left">
-	<h3> Drag and drop the code elements into the editor </h3>
+	<h4> Drag and drop the code elements into the editor </h4>
 	<p>Input and Output</p>
 	<pre class="drag-me"  draggable="true"><code class="language-python">print(" ")</code></pre>
 	<pre class="drag-me"  draggable="true"><code class="language-python">string = input()</code></pre>
@@ -209,6 +218,13 @@ else:
 	</div>
 
 </div>
+ 
+ <footer class="w3-container w3-padding-16 w3-light-grey">
+  <p><a href="http://www.mangolearning.academy">Mango Learning</a></p>
+  <p>Contact us: <a href="hello@mangolearning.academy">hello@mangolearning.academy</a></p>
+  <p><a href="https://computerscienceforteachers.blogspot.com/">Blog</a> | <a href="https://www.youtube.com/channel/UCVNSj737SoNgfalRl41QNxw">YouTube</a> | <a href="https://github.com/wmfgrey/MangoPython">Github</a> </p>
+</footer>  
+ 
  
 <script src="{{url_for('static', filename='prism.js')}}"></script>
 <link rel="stylesheet" href="{{ url_for('static', filename='prism.css') }}">
