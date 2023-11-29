@@ -26,7 +26,7 @@ def index():
    
         try:
             
-         result = subprocess.run(["python", "-c", code], \
+         result = subprocess.run(["python", "-c", out_code], \
                                  input=userInput,\
                                  capture_output = True,\
                                  text = True)
