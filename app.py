@@ -2,12 +2,25 @@ from flask import Flask, render_template, request
 import subprocess
 
 app = Flask(__name__)
+def add_newline_after_input(code):
+    lines = code.split('\n')
+    output_lines = []
+    for line in lines:
+        output_lines.append(line)
+        if 'input' in line:
+            output_lines.append('print()')
+
+    out_code = '\n'.join(output_lines)
+    return(out_code)
+    #print(out_code,flush=True)
+
 
 @app.route("/", methods=["GET", "POST"])
 def index():
     if request.method == "POST":
 
         code = request.form["code"]
+        out_code=(add_newline_after_input(code))
         userInput = request.form["userInput"]
         userInput = userInput.replace('\r', '')
    
