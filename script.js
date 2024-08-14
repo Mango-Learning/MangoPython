@@ -1,5 +1,4 @@
 
-
 // Function to display output in the output div
 function printOutput(line) {
     const outputDiv = document.getElementById("output");
@@ -25,12 +24,17 @@ worker.onmessage = (event) => {
     } else if (event.data.type === "DONE") {
         console.log("Execution finished");
     } else if (event.data.type === "ERROR") {
-        printOutput("Error: " + event.data.data);
+       //printOutput("Error: " + event.data.data);
+	   printOutput(replaceErrorMessage(event.data.data));
     }
 };
 	
     const code = document.getElementById("code").value;
-    const userInput = document.getElementById("userInput").value.split('\n');
+    let userInput = document.getElementById("userInput").value.split('\n');
+	if (userInput.length === 1 && userInput[0] === '') {
+      userInput = [];
+    }
+	
     worker.postMessage({ type: "RUN", code, userInput });
 	
 	// Initialize worker and load Pyodide
