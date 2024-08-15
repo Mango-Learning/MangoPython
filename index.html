@@ -153,8 +153,12 @@ document.querySelectorAll('.drag-me').forEach(el => {
   });
 });
 
+// Prevent dropping into the textarea
+const userInput = document.getElementById('userInput');
+userInput.addEventListener('dragover', e => e.preventDefault());
+userInput.addEventListener('drop', e => e.preventDefault());	
 		
-	let input = document.getElementById('my_file')
+    let input = document.getElementById('my_file')
     let textarea = document.getElementById('code')
     input.addEventListener('change', () => {
     let files = input.files;
