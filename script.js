@@ -24,8 +24,8 @@ worker.onmessage = (event) => {
     } else if (event.data.type === "DONE") {
         console.log("Execution finished");
     } else if (event.data.type === "ERROR") {
-         printOutput("ERROR: " + event.data.data);
-	//   printOutput(replaceErrorMessage(event.data.data));
+         //printOutput("ERROR: " + event.data.data);
+	 printOutput(replaceErrorMessage(event.data.data));
     }
 };
 	
