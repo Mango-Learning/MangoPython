@@ -20,7 +20,14 @@ This is called indentation.\n
 To fix this try indenting \n\n${lines[1]}\n\n on ${lines[0]}.\n
 Indent your code by pressing Space bar or the Tab key.`;
     }
-		
+
+	if (errorMessage.includes("IndentationError: unexpected indent")) {
+		const lines = extractedMessage.split('\n');
+        return `Error on or around ${extractedMessage}\n
+This error means that you need to remove the spaces or tab (indentation) at the start of the line.\n
+To fix this remove the indentation \n\n${lines[1]}\n\n on ${lines[0]}.`;
+    }
+	
 	if (errorMessage.includes("SyntaxError: EOL while scanning string literal")) {
 		const lines = extractedMessage.split('\n');
         return `Error on or around ${extractedMessage}\n 
