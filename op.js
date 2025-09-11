@@ -1,7 +1,8 @@
 function clearFields() {
- document.getElementById("code").value=""
- document.getElementById("userInput").value=""
- document.getElementById("output").value="Output appears here"
+ document.getElementById("code").value="";
+ document.getElementById("userInput").value="";
+ document.getElementById("output").value="Output appears here";
+// location.reload();	
 }
 
 //document.getElementById("clear-button").onclick = clearFields;
@@ -20,4 +21,5 @@ function saveFileAs() {
 }
 
 //document.getElementById("save-button").onclick = saveFileAs;
+
 
